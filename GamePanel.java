@@ -56,13 +56,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
         if (bat1Up) {
             bat1.moveUp();
-        } else if (bat1Down) {
+        } 
+            
+        else if (bat1Down) {
             bat1.moveDown(getHeight());
         }
 
         if (bat2Up) {
             bat2.moveUp();
-        } else if (bat2Down) {
+        } 
+            
+        else if (bat2Down) {
             bat2.moveDown(getHeight());
         }
 
@@ -76,7 +80,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
             if (ball.getY() + ball.getDiameter() >= bat1.getY() && ball.getY() <= bat1.getBottom()) {
                 ball.bounceX();
             }
-        } else if (ball.getX() + ball.getDiameter() >= bat2.getX()) {
+        }
+            
+        else if (ball.getX() + ball.getDiameter() >= bat2.getX()) {
             if (ball.getY() + ball.getDiameter() >= bat2.getY() && ball.getY() <= bat2.getBottom()) {
                 ball.bounceX();
             }
@@ -85,7 +91,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         if (ball.getX() < 0) {
             bat2Score++;
             ball.resetPosition(390, 290);
-        } else if (ball.getX() > getWidth()) {
+        } 
+            
+        else if (ball.getX() > getWidth()) {
             bat1Score++;
             ball.resetPosition(390, 290);
         }
@@ -93,7 +101,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         if (bat1Score == 5) {
             gameOver = true;
             winner = "Player 1";
-        } else if (bat2Score == 5) {
+        } 
+            
+        else if (bat2Score == 5) {
             gameOver = true;
             winner = "Player 2";
         }
@@ -117,11 +127,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
         if (key == KeyEvent.VK_W) {
             bat1Up = true;
-        } else if (key == KeyEvent.VK_S) {
+        } 
+            
+        else if (key == KeyEvent.VK_S) {
             bat1Down = true;
-        } else if (key == KeyEvent.VK_UP) {
+        } 
+            
+        else if (key == KeyEvent.VK_UP) {
             bat2Up = true;
-        } else if (key == KeyEvent.VK_DOWN) {
+        } 
+            
+        else if (key == KeyEvent.VK_DOWN) {
             bat2Down = true;
         }
     }
@@ -132,11 +148,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
         if (key == KeyEvent.VK_W) {
             bat1Up = false;
-        } else if (key == KeyEvent.VK_S) {
+        }
+        else if (key == KeyEvent.VK_S) {
             bat1Down = false;
-        } else if (key == KeyEvent.VK_UP) {
+        } 
+        else if (key == KeyEvent.VK_UP) {
             bat2Up = false;
-        } else if (key == KeyEvent.VK_DOWN) {
+        } 
+        else if (key == KeyEvent.VK_DOWN) {
             bat2Down = false;
         }
     }
@@ -147,7 +166,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
         if (key == 'q' || key == 'Q') {
             System.exit(0);
-        } else if (key == 'r' || key == 'R') {
+        } 
+        else if (key == 'r' || key == 'R') {
             resetGame();
         }
     }
